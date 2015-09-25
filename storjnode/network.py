@@ -63,8 +63,7 @@ class Network(object):
             self._connection = server.connect(host, port, nick)
             log.info("Connection established!")
         except irc.client.ServerConnectionError:
-            logmsg = "Connecting to {host}:{port} as {nick}."
-            log.warning(logmsg.format(host=host, port=port, nick=nick))
+            log.warning("Unable to connect!")
 
     def _start_client(self):
         self._client_stop = False
